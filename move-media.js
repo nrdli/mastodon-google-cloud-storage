@@ -9,11 +9,11 @@ if (argv._.length !== 2) {
 }
 
 const basePath = path.resolve(process.cwd(), argv._[0], 'public/system');
-const targetPath = path.resolve(process.cwd(), argv._[1], 'images/media_attachments');
+const targetPath = path.resolve(process.cwd(), argv._[1], 'images');
 const targetSuffix = 'files';
 
 const config = {
-  "accounts": {
+  accounts: {
     avatars: ["original", "static"],
     headers: ["original", "static"],
   },
@@ -70,7 +70,7 @@ Object.keys(config).forEach((type) => {
     ))).forEach((info) => {
       info.sizes.forEach((size) => {
         const sourceFile = path.join(subtypeBase, ...info.prefix, size, info[size]);
-        const targetDir = path.join(targetPath, info.number, targetSuffix, size);
+        const targetDir = path.join(targetPath, type, info.number, subtype, size);
         const targetFile = path.join(targetDir, 'img_');
 
         action(sourceFile, targetDir, targetFile);
