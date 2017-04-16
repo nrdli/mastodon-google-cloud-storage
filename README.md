@@ -32,9 +32,9 @@ You can build that folder structure by:
 3. Run the script `node move-media ../path/to/live .` (Puts the images directory here).
   You can run the above command with `--dry-run` to see the output of what the command will do if you don't trust the code.
 
-Once that folder has been built you can just use [Google's CLI](https://cloud.google.com/sdk/), `gsutil`, to upload that folder.
+Once that folder has been built you can just use [Google's CLI](https://cloud.google.com/sdk/), `gsutil`, to upload that folder and set the ACL to public. (`gsutil -m cp -r images gs://media.nrd.li && gsutil -m acl ch -r -u AllUsers:R gs://media.nrd.li`)
 
-You probably want to do this twice, once before you reconfigure your instance, and once again after so that you can be sure all media has been uploaded to cloud storage.
+You probably want to do this step twice, once before you reconfigure your instance, and once again after so that you can be sure all media has been uploaded to cloud storage. I'm sure there's a way to sync the directory, but ingress is free so I just uploaded it all twice.
 
 Setting it up so you can see images
 -----------------------------------
