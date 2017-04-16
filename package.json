@@ -1,0 +1,14 @@
+{
+  "name": "media-mover",
+  "version": "0.0.1",
+  "description": "Upload things to google cloud storage",
+  "main": "index.js",
+  "repository": "git@github.com:nrdli/media-mover.git",
+  "author": "Kegan Myers <kegan@keganmyers.com>",
+  "license": "Unlicense",
+  "dependencies": {
+    "fs-extra": "^2.1.2",
+    "lodash": "^4.17.4",
+    "minimist": "^1.2.0"
+  }
+}
